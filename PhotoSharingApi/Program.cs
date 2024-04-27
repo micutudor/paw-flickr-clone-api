@@ -38,10 +38,19 @@ builder.Services.AddTransient<IPhotoRepository, PhotoRepository>();
 builder.Services.AddTransient<IPhotoCategoryRepository, PhotoCategoryRepository>();
 builder.Services.AddTransient<IAlbumRepository, AlbumRepository>();
 builder.Services.AddTransient<IBaseRepository<PhotoAlbum>, BaseRepository<PhotoAlbum>>();
+builder.Services.AddTransient<IBaseRepository<User>, BaseRepository<User>>();
+builder.Services.AddTransient<IBaseRepository<Comment>, BaseRepository<Comment>>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<ICommentRepository, CommentRepository>();
+
 
 builder.Services.AddTransient<IPhotoService, PhotoService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IAlbumService, AlbumService>();
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ICommentService, CommentService>();
+
+
 
 var app = builder.Build();
 

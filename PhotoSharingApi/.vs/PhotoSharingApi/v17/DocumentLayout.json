@@ -1,0 +1,445 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\repositories\\interfaces\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\repositories\\interfaces\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\interfaces\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\interfaces\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\models\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\models\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\dal\\repositories\\interfaces\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:dal\\repositories\\interfaces\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\models\\commentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:models\\commentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\services\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:services\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|c:\\users\\alex\\onedrive\\desktop\\pawproject\\paw-flickr-clone-api\\photosharingapi\\models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29D4686E-5788-4741-A58A-CAF84CBE2B13}|PhotoSharingApi.csproj|solutionrelative:models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAACsAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:17:00.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T14:42:38.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ICommentService.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Interfaces\\ICommentService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICommentService.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Interfaces\\ICommentService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICommentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T13:28:36.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:16:39.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAACMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:21:50.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Controllers\\CommentController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAD4vxoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T13:31:33.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\CommentRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\CommentRepository.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\CommentRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\CommentRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACIAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T11:26:24.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T14:42:50.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\Interfaces\\ICommentRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\Interfaces\\ICommentRepository.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\Interfaces\\ICommentRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\Interfaces\\ICommentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T11:26:13.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\BaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:15:35.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CommentService.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\CommentService.cs",
+              "RelativeDocumentMoniker": "Services\\CommentService.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\CommentService.cs",
+              "RelativeToolTip": "Services\\CommentService.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAQwD0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T13:28:49.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Models\\Comment.cs",
+              "RelativeToolTip": "DAL\\Models\\Comment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T13:31:30.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAwwBIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:44:19.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Album.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Models\\Album.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\Album.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Models\\Album.cs",
+              "RelativeToolTip": "DAL\\Models\\Album.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T13:25:01.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\DataContext.cs",
+              "RelativeDocumentMoniker": "DAL\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\DataContext.cs",
+              "RelativeToolTip": "DAL\\DataContext.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAEwBcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:15:57.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\Interfaces\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\Interfaces\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Repositories\\Interfaces\\IBaseRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\Interfaces\\IBaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:15:48.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\DAL\\Models\\User.cs",
+              "RelativeToolTip": "DAL\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T19:20:43.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:55:38.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\CategoryService.cs",
+              "RelativeToolTip": "Services\\CategoryService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:15:22.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-21T18:47:42.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CommentModel.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Models\\CommentModel.cs",
+              "RelativeDocumentMoniker": "Models\\CommentModel.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Models\\CommentModel.cs",
+              "RelativeToolTip": "Models\\CommentModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T13:23:47.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Services\\Mappings\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Services\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "Services\\Mappings\\MappingProfile.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAuwB4AAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:55:46.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:49:48.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:51:19.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CategoryModel.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Models\\CategoryModel.cs",
+              "RelativeDocumentMoniker": "Models\\CategoryModel.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Desktop\\PAWProject\\paw-flickr-clone-api\\PhotoSharingApi\\Models\\CategoryModel.cs",
+              "RelativeToolTip": "Models\\CategoryModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:49:26.303Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
