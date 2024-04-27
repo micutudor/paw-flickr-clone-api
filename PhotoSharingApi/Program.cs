@@ -23,8 +23,17 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Dependency Injection
 builder.Services.AddTransient<IBaseRepository<Category>, BaseRepository<Category>>();
+builder.Services.AddTransient<IBaseRepository<User>, BaseRepository<User>>();
+builder.Services.AddTransient<IBaseRepository<Comment>, BaseRepository<Comment>>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<ICommentRepository, CommentRepository>();
+
 
 builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ICommentService, CommentService>();
+
+
 
 var app = builder.Build();
 
