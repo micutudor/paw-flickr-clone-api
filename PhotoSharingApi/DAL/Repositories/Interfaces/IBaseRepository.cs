@@ -2,6 +2,8 @@
 {
     public interface IBaseRepository<T>
     {
+        void Add(T entity);
         List<T> GetAll();
+        void Delete(T entity);
     }
 }

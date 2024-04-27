@@ -78,7 +78,7 @@ namespace PhotoSharingApi.DAL
                 .WithMany(p => p.PhotoCategories)
                 .HasForeignKey(pc => pc.photo_id) 
                 .HasPrincipalKey(p => p.photo_id)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<PhotoCategory>()
                 .HasOne(pc => pc.Category)
