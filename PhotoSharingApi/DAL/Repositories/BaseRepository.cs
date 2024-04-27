@@ -13,10 +13,21 @@ namespace PhotoSharingApi.DAL.Repositories
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<T>();
         }
+        public virtual void Add(T entity)
+        {
+            _dbSet.Add(entity);
+            _dbContext.SaveChanges();
+        }
 
-        public List<T> GetAll()
+        public virtual List<T> GetAll()
         {
             return _dbSet.ToList();
+        }
+
+        public virtual void Delete(T entity)
+        {
+            _dbSet.Remove(entity);
+            _dbContext.SaveChanges();
         }
     }
 }
