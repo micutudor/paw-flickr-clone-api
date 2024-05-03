@@ -28,9 +28,9 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpDelete("[action]")]
-        public void Delete(int photoId)
+        public async Task Delete(int photoId)
         {
-            _photoService.Delete(photoId);
+            await _photoService.Delete(photoId);
         }
     }
 }

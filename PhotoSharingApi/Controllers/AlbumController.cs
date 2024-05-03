@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PhotoSharingApi.DAL.Models;
-using PhotoSharingApi.Models;
 using PhotoSharingApi.Models.Albums;
-using PhotoSharingApi.Services;
 using PhotoSharingApi.Services.Interfaces;
 
 namespace PhotoSharingApi.Controllers
@@ -19,9 +16,9 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpPost("[action]")]
-        public void Create(CreateAlbumRequestModel album)
+        public async Task Create(CreateAlbumRequestModel album)
         {
-            _albumService.Create(album);
+            await _albumService.Create(album);
         }
 
         [HttpGet("[action]")]

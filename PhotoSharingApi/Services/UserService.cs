@@ -15,46 +15,43 @@ namespace PhotoSharingApi.Services
     {
         private readonly IMapper _mapper;
 
-        private readonly IBaseRepository<User> _baseRepository;
         private readonly IUserRepository _userRepository;
 
-        public UserService(IMapper mapper, IBaseRepository<User> baseRepository, IUserRepository userRepository)
+        public UserService(IMapper mapper, IUserRepository userRepository)
         {
             _mapper = mapper;
-            _baseRepository = baseRepository;
             _userRepository = userRepository;
 
         }
 
-        public List<UserModel> GetAll() => _mapper.Map<List<UserModel>>(_baseRepository.GetAll());
-
-        public string HashPassword(string password) 
-        {
-            var sha = SHA256.Create();
-            var asByteArray = Encoding.Default.GetBytes(password);
-            var hashedPassword = sha.ComputeHash(asByteArray);
-            return Convert.ToBase64String(hashedPassword);
-        }
-
-        public async Task CreateUser(UserModel user)
+        public async Task Create(UserModel user)
         {
             var newUser = new User
             {
-                user_id = user.Id,
-                first_name = user.First_Name,
-                last_name = user.Last_Name,
+                first_name = user.FirstName,
+                last_name = user.LastName,
                 username = user.Username,
                 password = HashPassword(user.Password),
                 email = user.Email,
-                is_moderator = user.Is_Moderator
+                is_moderator = 0
             };
 
-            await _userRepository.Create(newUser);
+            await _userRepository.Add(newUser);
         }
 
         public async Task<string> GetUsernameById(int userid)
         {
             return await _userRepository.GetUsernameById(userid);
         }
+
+        #region UTILS
+        private string HashPassword(string password)
+        {
+            var sha = SHA256.Create();
+            var asByteArray = Encoding.Default.GetBytes(password);
+            var hashedPassword = sha.ComputeHash(asByteArray);
+            return Convert.ToBase64String(hashedPassword);
+        }
+        #endregion
     }
 }

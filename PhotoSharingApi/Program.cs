@@ -10,10 +10,10 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 /* TODO (until Weekend)
- *  - finish Album - get album, add album attribute at posting photo & testing
+ *  - finish Album - search for photos
  *  - validation on request and error handling
- *  - refactor
- *  - integrate Alex code (check code, refactor, etc.)
+ *  - user authentication and use user_id from auth middleware
+ *  - refactor and add things missed when starting client
  */
 
 // Add services to the container.
@@ -32,18 +32,16 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-// Dependency Injection
-builder.Services.AddTransient<IBaseRepository<Category>, BaseRepository<Category>>();
+// Inject DB Repositories
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IPhotoRepository, PhotoRepository>();
 builder.Services.AddTransient<IPhotoCategoryRepository, PhotoCategoryRepository>();
 builder.Services.AddTransient<IAlbumRepository, AlbumRepository>();
-builder.Services.AddTransient<IBaseRepository<PhotoAlbum>, BaseRepository<PhotoAlbum>>();
-builder.Services.AddTransient<IBaseRepository<User>, BaseRepository<User>>();
-builder.Services.AddTransient<IBaseRepository<Comment>, BaseRepository<Comment>>();
+builder.Services.AddTransient<IPhotoAlbumRepository, PhotoAlbumRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ICommentRepository, CommentRepository>();
 
-
+// Inject Services
 builder.Services.AddTransient<IPhotoService, PhotoService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IAlbumService, AlbumService>();

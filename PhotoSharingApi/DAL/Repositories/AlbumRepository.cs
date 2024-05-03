@@ -6,14 +6,7 @@ namespace PhotoSharingApi.DAL.Repositories
 {
     public class AlbumRepository : BaseRepository<Album>, IAlbumRepository
     {
-        private readonly DataContext _dbContext;
-        private readonly DbSet<Album> _dbSet;
-
-        public AlbumRepository(DataContext dbContext) : base(dbContext)
-        {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<Album>();
-        }
+        public AlbumRepository(DataContext dbContext) : base(dbContext) { }
 
         public List<Album> GetAllUserAlbums(int userId)
         {

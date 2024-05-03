@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Writers;
 using PhotoSharingApi.DAL.Models;
 using PhotoSharingApi.Models;
 using PhotoSharingApi.Models.Albums;
+using PhotoSharingApi.Models.Comments;
 using PhotoSharingApi.Models.Photos;
 using System.Text.Json;
 
@@ -32,19 +33,19 @@ namespace PhotoSharingApi.Services.Mappings
                 .ForMember(dest => dest.PhotosCount, opt => opt.MapFrom(src => src.PhotoAlbums.Count));
             CreateMap<User, UserModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.user_id))
-                .ForMember(dest => dest.First_Name, opt => opt.MapFrom(src => src.first_name))
-                .ForMember(dest => dest.Last_Name, opt => opt.MapFrom(src => src.last_name))
+                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.first_name))
+                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.last_name))
                 .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.username))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.email))
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.password))
-                .ForMember(dest => dest.Is_Moderator, opt => opt.MapFrom(src => src.is_moderator));
+                .ForMember(dest => dest.IsModerator, opt => opt.MapFrom(src => src.is_moderator));
 
             CreateMap<Comment, CommentModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.comment_id))
-                .ForMember(dest => dest.User_Id, opt => opt.MapFrom(src => src.user_id))
-                .ForMember(dest => dest.Photo_Id, opt => opt.MapFrom(src => src.photo_id))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.user_id))
+                .ForMember(dest => dest.PhotoId, opt => opt.MapFrom(src => src.photo_id))
                 .ForMember(dest => dest.Comment, opt => opt.MapFrom(src => src.comment))
-                .ForMember(dest => dest.Commented_At, opt => opt.MapFrom(src => src.commented_at))
+                .ForMember(dest => dest.CommentedAt, opt => opt.MapFrom(src => src.commented_at))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.status));
 
         }
