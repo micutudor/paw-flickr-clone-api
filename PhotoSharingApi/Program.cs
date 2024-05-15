@@ -42,9 +42,21 @@ builder.Services.AddTransient<IAlbumService, AlbumService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<ICommentService, CommentService>();
 
+var allowedOrigin = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CORSPolicy", policy =>
+    {
+        policy.WithOrigins(allowedOrigin)
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
+
+app.UseCors("CORSPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
