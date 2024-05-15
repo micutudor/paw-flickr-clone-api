@@ -10,9 +10,9 @@ namespace PhotoSharingApi.Services
     {
         private readonly IMapper _mapper;
 
-        private readonly IBaseRepository<Category> _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryService(IMapper mapper, IBaseRepository<Category> categoryRepository) 
+        public CategoryService(IMapper mapper, ICategoryRepository categoryRepository) 
         {
             _mapper = mapper;
             _categoryRepository = categoryRepository;

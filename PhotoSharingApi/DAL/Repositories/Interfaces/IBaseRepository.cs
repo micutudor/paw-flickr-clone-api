@@ -1,11 +1,13 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 
 namespace PhotoSharingApi.DAL.Repositories.Interfaces
 {
     public interface IBaseRepository<T>
     {
-        void Add(T entity);
+        Task Add(T entity);
         List<T> GetAll();
-        void Delete(T entity);
+        Task Update(Expression<Func<T, bool>> filter, Action<T> updateAction);
+        Task Delete(Expression<Func<T, bool>> filter);
     }
 }

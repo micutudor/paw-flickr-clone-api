@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PhotoSharingApi.DAL.Models;
+using PhotoSharingApi.DAL.Repositories;
 using PhotoSharingApi.DAL.Repositories.Interfaces;
 using PhotoSharingApi.Models.Photos;
 using PhotoSharingApi.Services.Interfaces;
@@ -13,9 +14,13 @@ namespace PhotoSharingApi.Services
 
         private readonly IPhotoRepository _photoRepository;
         private readonly IPhotoCategoryRepository _photoCategoryRepository;
-        private readonly IBaseRepository<PhotoAlbum> _photoAlbumRepository;
+        private readonly IPhotoAlbumRepository _photoAlbumRepository;
 
-        public PhotoService(IMapper mapper, IPhotoRepository photoRepository, IPhotoCategoryRepository photoCategoryRepository, IBaseRepository<PhotoAlbum> photoAlbumRepository)
+        public PhotoService(
+            IMapper mapper, 
+            IPhotoRepository photoRepository, 
+            IPhotoCategoryRepository photoCategoryRepository, 
+            IPhotoAlbumRepository photoAlbumRepository)
         {
             _mapper = mapper;
             _photoRepository = photoRepository;
@@ -49,18 +54,18 @@ namespace PhotoSharingApi.Services
                 await photoFile.CopyToAsync(fileStream);
             }
 
-            _photoRepository.Add(addedPhoto);
+            await _photoRepository.Add(addedPhoto);
 
             foreach (var category in photo.Categories)
             {
-                _photoCategoryRepository.Add(new PhotoCategory
+                await _photoCategoryRepository.Add(new PhotoCategory
                 {
                     photo_id = addedPhoto.photo_id,
                     category_id = category
                 });
             }
 
-            _photoAlbumRepository.Add(new PhotoAlbum
+            await _photoAlbumRepository.Add(new PhotoAlbum
             {
                 photo_id = addedPhoto.photo_id,
                 album_id = photo.Album
@@ -85,7 +90,7 @@ namespace PhotoSharingApi.Services
             return results;
         }
 
-        public void Delete(int photoId)
+        public async Task Delete(int photoId)
         {
             var photo = _photoRepository.GetAll().Where(item => item.photo_id == photoId).FirstOrDefault();
 
@@ -98,7 +103,7 @@ namespace PhotoSharingApi.Services
                 if (File.Exists(photoFilePath))
                     File.Delete(photoFilePath);
 
-                _photoRepository.Delete(photo);
+                await _photoRepository.Delete(item => item.photo_id == photoId);
             }
         }
     }

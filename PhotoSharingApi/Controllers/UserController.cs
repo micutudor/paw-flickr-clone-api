@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
+﻿using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models;
-using PhotoSharingApi.Services;
 using PhotoSharingApi.Services.Interfaces;
 
 namespace PhotoSharingApi.Controllers
@@ -16,18 +13,6 @@ namespace PhotoSharingApi.Controllers
         public UserController(IUserService userService)
         {
             _userService = userService;
-        }
-
-        [HttpPost("[action]")]
-        public async Task Create(UserModel user)
-        {
-            await _userService.CreateUser(user);
-        }
-
-        [HttpGet("[action]")]
-        public ActionResult<List<UserModel>> GetAll()
-        {
-            return Ok(_userService.GetAll());
         }
 
         [HttpGet("[action]")]

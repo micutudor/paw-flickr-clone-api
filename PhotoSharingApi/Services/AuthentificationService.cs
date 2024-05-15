@@ -1,41 +1,38 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using PhotoSharingApi.DAL;
-using PhotoSharingApi.DAL.Models;
-using PhotoSharingApi.DAL.Repositories.Interfaces;
+﻿using PhotoSharingApi.DAL.Repositories.Interfaces;
 using PhotoSharingApi.Models;
-using PhotoSharingApi.Models.Albums;
 using PhotoSharingApi.Services.Interfaces;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Security.Cryptography;
-using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.EntityFrameworkCore;
+using PhotoSharingApi.Models.Enums;
 
 namespace PhotoSharingApi.Services
 {
     public class AuthentificationService : IAuthentificationService
     {
+        private readonly IUserService _userService;
+
         private readonly IUserRepository _userRepository;
-        private readonly DataContext _dataContext;
+
         private readonly string _jwtSecret;
-        public AuthentificationService(IUserRepository userRepository,DataContext dataContext, string jwtSecret)
+
+        public AuthentificationService(IConfiguration config, IUserService userService, IUserRepository userRepository)
         {
+            _userService = userService;
+
             _userRepository = userRepository;
-            _dataContext = dataContext;
-            _jwtSecret = jwtSecret;
+            _jwtSecret = config["JWTSecret"];
         }
 
         public void Register(UserModel user)
         {
-            if (string.IsNullOrWhiteSpace(user.First_Name))
+            if (string.IsNullOrWhiteSpace(user.FirstName))
             {
                 throw new ArgumentException("The first name is empty!");
             }
-            else if (string.IsNullOrWhiteSpace(user.Last_Name))
+            else if (string.IsNullOrWhiteSpace(user.LastName))
             {
                 throw new ArgumentException("The last name is empty!");
             }
@@ -43,7 +40,7 @@ namespace PhotoSharingApi.Services
             {
                 throw new ArgumentException("The username is empty!");
             }
-            else if (_dataContext.Users.Where(user => user.email!.ToLower() == user.email.ToLower()).Count() > 0)
+            else if (_userRepository.CheckIfUsernameIsUnique(user.Username))
             {
                 throw new ArgumentException("This username is allready taken!");
             }
@@ -51,7 +48,7 @@ namespace PhotoSharingApi.Services
             {
                 throw new ArgumentException("The email is empty!");
             }
-            else if (_dataContext.Users.Where(user => user.email!.ToLower() == user.email.ToLower()).Count() > 0)
+            else if (_userRepository.CheckIfEmailIsUnique(user.Email))
             {
                 throw new ArgumentException("This email is allready used for another account!");
             }
@@ -60,28 +57,18 @@ namespace PhotoSharingApi.Services
                 throw new ArgumentException("The password is empty!");
             }
 
-            
-            var newUser = new User
-            {
-                user_id = user.Id,
-                first_name = user.First_Name,
-                last_name = user.Last_Name,
-                username = user.Username,
-                password = HashPassword(user.Password),
-                email = user.Email,
-                is_moderator = user.Is_Moderator
-            };
-
-            _userRepository.Create(newUser);
+            _userService.Create(user);
         }
 
         public string Login(string username, string password)
         {
             var user = _userRepository.GetByUsername(username);
-            if(user == null && VerifyPassword(password, user.password))
+
+            if (user != null && VerifyPassword(password, user.password))
             {
-                return GenerateJwtToken(user.username);
+                return GenerateJwtToken(user.username, user.is_moderator);
             }
+
             return null;   
         }
 
@@ -99,7 +86,7 @@ namespace PhotoSharingApi.Services
             return hashedInputPassword == hashedPassword;
         }
 
-        private string GenerateJwtToken(string username)
+        private string GenerateJwtToken(string username, int? isModerator)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSecret);
@@ -107,7 +94,8 @@ namespace PhotoSharingApi.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                new Claim(ClaimTypes.Name, username)
+                    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.Role, Enum.GetName(typeof(UserRolesEnum), isModerator ?? 0))
                 }),
                 Expires = DateTime.UtcNow.AddDays(1), 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

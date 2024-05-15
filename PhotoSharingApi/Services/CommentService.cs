@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using PhotoSharingApi.DAL.Models;
 using PhotoSharingApi.DAL.Repositories;
 using PhotoSharingApi.DAL.Repositories.Interfaces;
-using PhotoSharingApi.Models;
+using PhotoSharingApi.Models.Comments;
 using PhotoSharingApi.Services.Interfaces;
 
 namespace PhotoSharingApi.Services
@@ -12,56 +12,33 @@ namespace PhotoSharingApi.Services
     {
         private readonly IMapper _mapper;
 
-        private readonly IBaseRepository<Comment> _baseRepository;
         private readonly ICommentRepository _commentRepository;
 
-        public CommentService(IMapper mapper, IBaseRepository<Comment> baseRepository, ICommentRepository commentRepository)
+        public CommentService(IMapper mapper, ICommentRepository commentRepository)
         {
             _mapper = mapper;
-            _baseRepository = baseRepository;
             _commentRepository = commentRepository;
         }
 
-        public List<CommentModel> GetAll() => _mapper.Map<List<CommentModel>>(_baseRepository.GetAll());
+        public List<CommentModel> GetAll() => _mapper.Map<List<CommentModel>>(_commentRepository.GetAll());
 
-        public async Task CreateComment(CommentModel comment)
+        public async Task Create(CommentModel comment)
         {
             var newComment = new Comment
             {
-                comment_id = comment.Id,
-                user_id = comment.User_Id,
-                photo_id = comment.Photo_Id,
+                user_id = comment.UserId,
+                photo_id = comment.PhotoId,
                 comment = comment.Comment,
-                commented_at = comment.Commented_At,
-                status = comment.Status
+                commented_at = DateTime.Now,
+                status = (int)CommentStatus.WaitingForApproval
                
             };
 
-            await _commentRepository.Create(newComment);
+            await _commentRepository.Add(newComment);
         }
 
-        public async Task UpdateComment(CommentModel comment)
-        {
-            var commentToUpdate = new Comment
-            {
-                comment_id = comment.Id,
-                user_id = comment.User_Id,
-                photo_id = comment.Photo_Id,
-                comment = comment.Comment,
-                commented_at = comment.Commented_At,
-                status = comment.Status
-            };
+        public async Task SetStatus(SetCommentStatusModel commentStatus) => await _commentRepository.Update(item => item.comment_id == commentStatus.CommentId, item => item.status = (int)commentStatus.Status);
 
-            if(comment.Status == 2)
-                await _commentRepository.Delete(comment.Id);
-            else
-                await _commentRepository.Update(commentToUpdate);
-
-        }
-
-        public async Task DeleteComment(int commentId)
-        {
-            await _commentRepository.Delete(commentId);
-        }
+        public async Task Delete(int commentId) => await _commentRepository.Delete(item => item.comment_id == commentId);
     }
 }

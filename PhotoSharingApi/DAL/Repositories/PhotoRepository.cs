@@ -6,14 +6,7 @@ namespace PhotoSharingApi.DAL.Repositories
 {
     public class PhotoRepository : BaseRepository<Photo>, IPhotoRepository
     {
-        private readonly DataContext _dbContext;
-        private readonly DbSet<Photo> _dbSet;
-
-        public PhotoRepository(DataContext dbContext) : base(dbContext) 
-        {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<Photo>();
-        }
+        public PhotoRepository(DataContext dbContext) : base(dbContext) { }
 
         public override List<Photo> GetAll()
         {

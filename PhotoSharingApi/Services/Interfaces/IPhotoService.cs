@@ -6,6 +6,6 @@ namespace PhotoSharingApi.Services.Interfaces
     {
         Task Add(AddPhotoRequestModel photo, IFormFile photoFile);
         List<PhotoModel> GetAll(int categoryId = 0);
-        void Delete(int photoId);
+        Task Delete(int photoId);
     }
 }

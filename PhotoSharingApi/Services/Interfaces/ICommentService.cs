@@ -1,16 +1,13 @@
-﻿using PhotoSharingApi.Models;
+﻿using PhotoSharingApi.Models.Comments;
 
 namespace PhotoSharingApi.Services.Interfaces
 {
     public interface ICommentService
     {
         List<CommentModel> GetAll();
-
-        Task CreateComment(CommentModel comment);
-
-        Task UpdateComment(CommentModel comment);
-
-        Task DeleteComment(int commentId);
+        Task Create(CommentModel comment);
+        Task SetStatus(SetCommentStatusModel commentStatus);
+        Task Delete(int commentId);
 
     }
 }

@@ -19,7 +19,7 @@ namespace PhotoSharingApi.Services
             _albumRepository = albumRepository;
         }
 
-        public void Create(CreateAlbumRequestModel album)
+        public async Task Create(CreateAlbumRequestModel album)
         {
             var newAlbum = new Album
             {
@@ -28,7 +28,7 @@ namespace PhotoSharingApi.Services
                 created_at = DateTime.Now
             };
 
-            _albumRepository.Add(newAlbum);
+            await _albumRepository.Add(newAlbum);
         }
 
         public GetAlbumResponseModel Get(int albumId)

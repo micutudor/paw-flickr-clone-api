@@ -6,14 +6,7 @@ namespace PhotoSharingApi.DAL.Repositories
 {
     public class PhotoCategoryRepository : BaseRepository<PhotoCategory>, IPhotoCategoryRepository
     {
-        private readonly DataContext _dbContext;
-        private readonly DbSet<PhotoCategory> _dbSet;
-
-        public PhotoCategoryRepository(DataContext dbContext) : base(dbContext)
-        {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<PhotoCategory>();
-        }
+        public PhotoCategoryRepository(DataContext dbContext) : base(dbContext) { }
 
         public List<PhotoCategory> GetPhotosByCategory(int categoryId)
         {

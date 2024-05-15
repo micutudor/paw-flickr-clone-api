@@ -6,24 +6,13 @@ using System.ComponentModel.Design;
 
 namespace PhotoSharingApi.DAL.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        private readonly DataContext _dbContext;
-
-        public UserRepository(DataContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
-        public async Task Create(User user)
-        {
-            await _dbContext.Users.AddAsync(user);
-            await _dbContext.SaveChangesAsync();
-        }
+        public UserRepository(DataContext dbContext) : base(dbContext) { }
 
         public async Task<User> GetById(int userId)
         {
-            return await _dbContext.Users.FindAsync(userId);
+            return await _dbSet.FindAsync(userId);
         }
 
         public async Task<string> GetUsernameById(int userId)
@@ -34,7 +23,17 @@ namespace PhotoSharingApi.DAL.Repositories
 
         public User GetByUsername(string username)
         {
-            return _dbContext.Users.FirstOrDefault(u => u.username == username);
+            return _dbSet.FirstOrDefault(u => u.username == username);
+        }
+
+        public bool CheckIfEmailIsUnique(string email)
+        {
+            return _dbSet.Where(user => user.email.ToLower() == email!.ToLower()).Count() > 0;
+        }
+
+        public bool CheckIfUsernameIsUnique(string username) 
+        {
+            return _dbSet.Where(user => user.username.ToLower() == username!.ToLower()).Count() > 0;
         }
     }
 }
