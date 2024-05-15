@@ -9,13 +9,6 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-/* TODO (until Weekend)
- *  - finish Album - search for photos
- *  - validation on request and error handling
- *  - user authentication and use user_id from auth middleware
- *  - refactor and add things missed when starting client
- */
-
 // Add services to the container.
 
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -42,6 +35,7 @@ builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ICommentRepository, CommentRepository>();
 
 // Inject Services
+builder.Services.AddTransient<IAuthentificationService, AuthentificationService>();
 builder.Services.AddTransient<IPhotoService, PhotoService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IAlbumService, AlbumService>();

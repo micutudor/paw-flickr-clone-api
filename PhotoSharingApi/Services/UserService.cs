@@ -21,7 +21,6 @@ namespace PhotoSharingApi.Services
         {
             _mapper = mapper;
             _userRepository = userRepository;
-
         }
 
         public async Task Create(UserModel user)

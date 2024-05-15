@@ -8,5 +8,7 @@ namespace PhotoSharingApi.DAL.Repositories.Interfaces
         Task<User> GetById(int userid);
         Task<string> GetUsernameById(int userid);
         public User GetByUsername(string username);
+        bool CheckIfEmailIsUnique(string email);
+        bool CheckIfUsernameIsUnique(string username);
     }
 }

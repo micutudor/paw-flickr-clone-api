@@ -23,7 +23,17 @@ namespace PhotoSharingApi.DAL.Repositories
 
         public User GetByUsername(string username)
         {
-            return _dbContext.Users.FirstOrDefault(u => u.username == username);
+            return _dbSet.FirstOrDefault(u => u.username == username);
+        }
+
+        public bool CheckIfEmailIsUnique(string email)
+        {
+            return _dbSet.Where(user => user.email.ToLower() == email!.ToLower()).Count() > 0;
+        }
+
+        public bool CheckIfUsernameIsUnique(string username) 
+        {
+            return _dbSet.Where(user => user.username.ToLower() == username!.ToLower()).Count() > 0;
         }
     }
 }

@@ -15,12 +15,6 @@ namespace PhotoSharingApi.Controllers
             _userService = userService;
         }
 
-        [HttpPost("[action]")]
-        public async Task Create(UserModel user)
-        {
-            await _userService.Create(user);
-        }
-
         [HttpGet("[action]")]
         public async Task<string> GetUsernameById(int userid)
         {
