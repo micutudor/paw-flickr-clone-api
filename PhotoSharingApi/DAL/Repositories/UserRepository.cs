@@ -31,5 +31,10 @@ namespace PhotoSharingApi.DAL.Repositories
             var result = await this.GetById(userId);
             return result.username;
         }
+
+        public User GetByUsername(string username)
+        {
+            return _dbContext.Users.FirstOrDefault(u => u.username == username);
+        }
     }
 }

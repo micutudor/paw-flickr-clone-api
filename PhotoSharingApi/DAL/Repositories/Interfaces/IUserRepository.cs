@@ -8,5 +8,6 @@ namespace PhotoSharingApi.DAL.Repositories.Interfaces
         Task Create(User user);
         Task<User> GetById(int userid);
         Task<string> GetUsernameById(int userid);
+        public User GetByUsername(string username);
     }
 }
