@@ -7,5 +7,6 @@ namespace PhotoSharingApi.DAL.Repositories.Interfaces
     {
         Task<User> GetById(int userid);
         Task<string> GetUsernameById(int userid);
+        public User GetByUsername(string username);
     }
 }
