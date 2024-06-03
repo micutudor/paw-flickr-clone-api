@@ -106,5 +106,19 @@ namespace PhotoSharingApi.Services
                 await _photoRepository.Delete(item => item.photo_id == photoId);
             }
         }
+
+        public PhotoModel GetPhotoById(int photoId)
+        {
+            PhotoModel photo = new PhotoModel();
+            photo = _mapper.Map<PhotoModel>(_photoRepository.GetById(photoId));
+            return photo;
+        }
+
+        public List<PhotoModel> GetPhotoByTitle(string titlePart)
+        {
+            List<PhotoModel> results = new List<PhotoModel>();
+            results = _mapper.Map<List<PhotoModel>>(_photoRepository.GetByTitle(titlePart));
+            return results;
+        }
     }
 }

@@ -27,6 +27,18 @@ namespace PhotoSharingApi.Controllers
             return Ok(_photoService.GetAll(categoryId));
         }
 
+        [HttpGet("[action]")]
+        public ActionResult<PhotoModel> GetById(int photoId)
+        {
+            return Ok(_photoService.GetPhotoById(photoId));
+        }
+
+        [HttpGet("[action]")]
+        public ActionResult<List<PhotoModel>> GetByTitle(string titlePart)
+        {
+            return Ok(_photoService.GetPhotoByTitle(titlePart));
+        }
+
         [HttpDelete("[action]")]
         public async Task Delete(int photoId)
         {
