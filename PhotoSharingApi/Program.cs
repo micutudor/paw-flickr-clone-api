@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using PhotoSharingApi.DAL;
 using PhotoSharingApi.DAL.Models;
 using PhotoSharingApi.DAL.Repositories;
@@ -55,6 +56,17 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+var fileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles", "Photos"));
+
+var options = new FileServerOptions
+{
+    FileProvider = fileProvider,
+    RequestPath = "/static",
+    EnableDirectoryBrowsing = true
+};
+
+app.UseFileServer(options);
 
 app.UseCors("CORSPolicy");
 

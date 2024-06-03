@@ -109,15 +109,13 @@ namespace PhotoSharingApi.Services
 
         public PhotoModel GetPhotoById(int photoId)
         {
-            PhotoModel photo = new PhotoModel();
-            photo = _mapper.Map<PhotoModel>(_photoRepository.GetById(photoId));
-            return photo;
+            var result = _mapper.Map<PhotoModel>(_photoRepository.GetById(photoId));
+            return result;
         }
 
         public List<PhotoModel> GetPhotoByTitle(string titlePart)
         {
-            List<PhotoModel> results = new List<PhotoModel>();
-            results = _mapper.Map<List<PhotoModel>>(_photoRepository.GetByTitle(titlePart));
+            var results = _mapper.Map<List<PhotoModel>>(_photoRepository.GetByTitle(titlePart));
             return results;
         }
     }
