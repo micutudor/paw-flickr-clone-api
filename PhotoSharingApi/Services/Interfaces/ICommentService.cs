@@ -4,8 +4,8 @@ namespace PhotoSharingApi.Services.Interfaces
 {
     public interface ICommentService
     {
-        List<CommentModel> GetAll();
-        Task Create(CommentModel comment);
+        List<CommentResponseModel> GetAllPhotoComments(int photoId);
+        Task Create(CreateCommentRequestModel comment);
         Task SetStatus(SetCommentStatusModel commentStatus);
         Task Delete(int commentId);
 

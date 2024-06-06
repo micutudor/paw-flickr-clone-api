@@ -32,7 +32,7 @@ namespace PhotoSharingApi.Services
         {
             Photo addedPhoto = new Photo
             {
-                user_id = photo.PostedBy,
+                user_id = 1,
                 posted_at = DateTime.Now,
                 path = Guid.NewGuid().ToString() + Path.GetExtension(photoFile.FileName),
                 geolocation = JsonSerializer.Serialize(photo.Geolocation),

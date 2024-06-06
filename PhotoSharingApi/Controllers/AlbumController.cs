@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models.Albums;
 using PhotoSharingApi.Services.Interfaces;
 
@@ -16,21 +17,21 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task Create(CreateAlbumRequestModel album)
+        [Authorize]
+        public async Task Create(CreateAlbumRequestModel newAlbum)
         {
-            await _albumService.Create(album);
+            int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
+
+            await _albumService.Create(userID, newAlbum.Name);
         }
 
         [HttpGet("[action]")]
-        public ActionResult<List<GetAlbumResponseModel>> Get(int albumId)
+        [Authorize]
+        public ActionResult<List<UserAlbumsResponseModel>> GetAll()
         {
-            return Ok(_albumService.Get(albumId));
-        }
+            int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
 
-        [HttpGet("[action]")]
-        public ActionResult<List<UserAlbumsResponseModel>> GetUserAll(int userId)
-        {
-            return Ok(_albumService.GetUserAlbums(userId));
+            return Ok(_albumService.GetUserAlbums(userID));
         }
     }
 }

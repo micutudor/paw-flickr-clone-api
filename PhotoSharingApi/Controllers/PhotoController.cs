@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models.Photos;
 using PhotoSharingApi.Services.Interfaces;
 
@@ -40,6 +41,7 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpDelete("[action]")]
+        [Authorize(Roles = "Moderator")]
         public async Task Delete(int photoId)
         {
             await _photoService.Delete(photoId);

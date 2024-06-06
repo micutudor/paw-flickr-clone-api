@@ -19,38 +19,18 @@ namespace PhotoSharingApi.Services
             _albumRepository = albumRepository;
         }
 
-        public async Task Create(CreateAlbumRequestModel album)
+        public async Task Create(int userID,string name)
         {
             var newAlbum = new Album
             {
-                user_id = album.OwnerId,
-                name = album.Name,
+                user_id = userID,
+                name = name,
                 created_at = DateTime.Now
             };
 
             await _albumRepository.Add(newAlbum);
         }
 
-        public GetAlbumResponseModel Get(int albumId)
-        {
-           var album = _albumRepository.GetAlbumPhotos(albumId);
-
-           if (album != null)
-           {
-                var result = new GetAlbumResponseModel
-                {
-                    Name = album.name,
-                    Owner = album.User.username,
-                    CreatedAt = album.created_at,
-                    Photos = album.PhotoAlbums.Select(item => item.Photo).ToList()
-                };
-
-                return result;
-           }
-
-           return null;
-        }
-
-        public List<UserAlbumsResponseModel> GetUserAlbums(int userId) => _mapper.Map<List<UserAlbumsResponseModel>>(_albumRepository.GetAllUserAlbums(userId));
+        public List<UserAlbumsResponseModel> GetUserAlbums(int userID) => _mapper.Map<List<UserAlbumsResponseModel>>(_albumRepository.GetAllUserAlbums(userID));
     }
 }

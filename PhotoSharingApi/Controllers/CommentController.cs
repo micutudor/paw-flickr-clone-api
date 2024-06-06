@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models.Comments;
+using PhotoSharingApi.Models.Enums;
 using PhotoSharingApi.Services.Interfaces;
 
 namespace PhotoSharingApi.Controllers
@@ -16,24 +18,26 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task Create(CommentModel comment)
+        public async Task Create(CreateCommentRequestModel comment)
         {
             await _commentService.Create(comment);
         }
 
         [HttpGet("[action]")]
-        public ActionResult<List<CommentModel>> GetAll()
+        public ActionResult<List<CommentResponseModel>> GetPhotoAll(int photoId)
         {
-            return Ok(_commentService.GetAll());
+            return Ok(_commentService.GetAllPhotoComments(photoId));
         }
 
         [HttpPatch("[action]")]
+        [Authorize]
         public async Task SetStatus(SetCommentStatusModel commentStatus)
         {
             await _commentService.SetStatus(commentStatus);
         }
 
         [HttpDelete("[action]")]
+        [Authorize(Roles = "Moderator")]
         public async Task Delete(int commentId)
         {
             await _commentService.Delete(commentId);

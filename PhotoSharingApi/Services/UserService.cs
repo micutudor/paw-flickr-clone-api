@@ -1,56 +1,44 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using PhotoSharingApi.DAL.Models;
-using PhotoSharingApi.DAL.Repositories;
 using PhotoSharingApi.DAL.Repositories.Interfaces;
-using PhotoSharingApi.Models;
+using PhotoSharingApi.Helpers;
+using PhotoSharingApi.Models.Authenticate;
 using PhotoSharingApi.Services.Interfaces;
-using System.Runtime.Intrinsics.Arm;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace PhotoSharingApi.Services
 {
     public class UserService : IUserService
     {
-        private readonly IMapper _mapper;
-
         private readonly IUserRepository _userRepository;
 
-        public UserService(IMapper mapper, IUserRepository userRepository)
+        public UserService(IUserRepository userRepository)
         {
-            _mapper = mapper;
             _userRepository = userRepository;
         }
 
-        public async Task Create(UserModel user)
+        public async Task Create(CreateAccountRequestModel newAccount)
         {
             var newUser = new User
             {
-                first_name = user.FirstName,
-                last_name = user.LastName,
-                username = user.Username,
-                password = HashPassword(user.Password),
-                email = user.Email,
+                first_name = newAccount.FirstName,
+                last_name = newAccount.LastName,
+                username = newAccount.Username,
+                password = HashPassword.Hash(newAccount.Password),
+                email = newAccount.Email,
                 is_moderator = 0
             };
 
             await _userRepository.Add(newUser);
         }
 
-        public async Task<string> GetUsernameById(int userid)
+        public async Task<string> GetUsernameById(int userID)
         {
-            return await _userRepository.GetUsernameById(userid);
+            return await _userRepository.GetUsernameById(userID);
         }
 
-        #region UTILS
-        private string HashPassword(string password)
+        public int GetIDByUsername(string username)
         {
-            var sha = SHA256.Create();
-            var asByteArray = Encoding.Default.GetBytes(password);
-            var hashedPassword = sha.ComputeHash(asByteArray);
-            return Convert.ToBase64String(hashedPassword);
+            return _userRepository.GetByUsername(username).user_id;
         }
-        #endregion
     }
 }

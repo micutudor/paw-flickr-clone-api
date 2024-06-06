@@ -3,5 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace PhotoSharingApi.DAL.Repositories.Interfaces
 {
-    public interface ICommentRepository : IBaseRepository<Comment> { }
+    public interface ICommentRepository : IBaseRepository<Comment> 
+    {
+        List<Comment> GetAllCommentsByPhotoId(int photoId);
+    }
 }

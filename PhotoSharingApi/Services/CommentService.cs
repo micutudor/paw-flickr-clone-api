@@ -20,13 +20,14 @@ namespace PhotoSharingApi.Services
             _commentRepository = commentRepository;
         }
 
-        public List<CommentModel> GetAll() => _mapper.Map<List<CommentModel>>(_commentRepository.GetAll());
+        public List<CommentResponseModel> GetAllPhotoComments(int photoId) => 
+            _mapper.Map<List<CommentResponseModel>>(_commentRepository.GetAllCommentsByPhotoId(photoId));
 
-        public async Task Create(CommentModel comment)
+        public async Task Create(CreateCommentRequestModel comment)
         {
             var newComment = new Comment
             {
-                user_id = comment.UserId,
+                user_id = 1, // To be took from middleware
                 photo_id = comment.PhotoId,
                 comment = comment.Comment,
                 commented_at = DateTime.Now,
@@ -37,7 +38,8 @@ namespace PhotoSharingApi.Services
             await _commentRepository.Add(newComment);
         }
 
-        public async Task SetStatus(SetCommentStatusModel commentStatus) => await _commentRepository.Update(item => item.comment_id == commentStatus.CommentId, item => item.status = (int)commentStatus.Status);
+        public async Task SetStatus(SetCommentStatusModel commentStatus) => 
+            await _commentRepository.Update(item => item.comment_id == commentStatus.CommentId, item => item.status = (int)commentStatus.Status);
 
         public async Task Delete(int commentId) => await _commentRepository.Delete(item => item.comment_id == commentId);
     }

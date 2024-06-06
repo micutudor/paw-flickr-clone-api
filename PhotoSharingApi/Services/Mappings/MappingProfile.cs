@@ -25,12 +25,17 @@ namespace PhotoSharingApi.Services.Mappings
                 .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.title))
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description))
                 .ForMember(dest => dest.Geolocation, opt => opt.MapFrom(src => JsonSerializer.Deserialize<PhotoGeolocationModel>(src.geolocation, JsonSerializerOptions.Default)))
-                .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.PhotoCategories.Select(item => new CategoryModel { Id = item.Category.category_id, Name = item.Category.name })));
+                .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => 
+                    src.PhotoCategories.Select(item => new CategoryModel { Id = item.Category.category_id, Name = item.Category.name })
+                ));
 
             CreateMap<Album, UserAlbumsResponseModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.album_id))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
-                .ForMember(dest => dest.PhotosCount, opt => opt.MapFrom(src => src.PhotoAlbums.Count));
+                .ForMember(dest => dest.Photos, opt => opt.MapFrom(src =>
+                    src.PhotoAlbums.Select(item => new AlbumPhotoResponseModel { ID = item.photo_id, Path = item.Photo.path })
+                ));
+
             CreateMap<User, UserModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.user_id))
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.first_name))
@@ -40,12 +45,11 @@ namespace PhotoSharingApi.Services.Mappings
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.password))
                 .ForMember(dest => dest.IsModerator, opt => opt.MapFrom(src => src.is_moderator));
 
-            CreateMap<Comment, CommentModel>()
+            CreateMap<Comment, CommentResponseModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.comment_id))
-                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.user_id))
-                .ForMember(dest => dest.PhotoId, opt => opt.MapFrom(src => src.photo_id))
+                .ForMember(dest => dest.Author, opt => opt.MapFrom(src => src.User.username))
                 .ForMember(dest => dest.Comment, opt => opt.MapFrom(src => src.comment))
-                .ForMember(dest => dest.CommentedAt, opt => opt.MapFrom(src => src.commented_at))
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.commented_at))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.status));
 
         }

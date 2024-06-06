@@ -5,8 +5,7 @@ namespace PhotoSharingApi.Services.Interfaces
 {
     public interface IAlbumService
     {
-        Task Create(CreateAlbumRequestModel album);
-        GetAlbumResponseModel Get(int albumId);
-        List<UserAlbumsResponseModel> GetUserAlbums(int userId);
+        Task Create(int userID, string name);
+        List<UserAlbumsResponseModel> GetUserAlbums(int userID);
     }
 }
