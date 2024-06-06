@@ -6,6 +6,6 @@ namespace PhotoSharingApi.Models.Albums
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int PhotosCount { get; set; }
+        public List<AlbumPhotoResponseModel> Photos { get; set; }
     }
 }

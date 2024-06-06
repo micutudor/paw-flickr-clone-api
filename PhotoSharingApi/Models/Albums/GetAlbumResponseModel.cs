@@ -2,11 +2,9 @@
 
 namespace PhotoSharingApi.Models.Albums
 {
-    public class GetAlbumResponseModel
+    public class AlbumPhotoResponseModel
     {
-        public string Name { get; set; }
-        public string Owner { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public List<Photo> Photos { get; set; }
+        public int ID { get; set; }
+        public string Path { get; set; }
     }
 }

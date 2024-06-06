@@ -1,12 +1,11 @@
 ﻿namespace PhotoSharingApi.Models.Comments
 {
-    public class CommentModel
+    public class CommentResponseModel
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public int PhotoId { get; set; }
+        public string Author { get; set; }
         public string Comment { get; set; }
-        public DateTime CommentedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
         public int Status { get; set; }
     }
 }

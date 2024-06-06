@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models.Photos;
 using PhotoSharingApi.Services.Interfaces;
 
@@ -16,9 +17,12 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpPost("[action]")]
+        [Authorize]
         public async Task Add([FromForm] AddPhotoRequestModel photoModel, IFormFile photoFile)
         {
-            await _photoService.Add(photoModel, photoFile);
+            int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
+
+            await _photoService.Add(userID, photoModel, photoFile);
         }
 
         [HttpGet("[action]")]
@@ -40,6 +44,7 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpDelete("[action]")]
+        [Authorize(Roles = "Moderator")]
         public async Task Delete(int photoId)
         {
             await _photoService.Delete(photoId);

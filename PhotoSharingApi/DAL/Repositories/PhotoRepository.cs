@@ -18,13 +18,15 @@ namespace PhotoSharingApi.DAL.Repositories
 
         public Photo GetById(int photoId)
         {
-            return _dbSet.Find(photoId);
+            return GetAll().Find(item => item.photo_id == photoId);
         }
 
         public List<Photo> GetByTitle(string titlePart)
         {
             string lowerTitlePart = titlePart.ToLower();
-            return _dbSet.Where(photo => photo.title.ToLower().Contains(lowerTitlePart)).ToList();
+            return GetAll()
+                    .Where(photo => photo.title.ToLower().Contains(lowerTitlePart))
+                    .ToList();
         }
     }
 }
