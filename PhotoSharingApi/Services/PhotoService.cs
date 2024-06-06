@@ -28,11 +28,11 @@ namespace PhotoSharingApi.Services
             _photoAlbumRepository = photoAlbumRepository;
         }
 
-        public async Task Add(AddPhotoRequestModel photo, IFormFile photoFile)
+        public async Task Add(int authorID, AddPhotoRequestModel photo, IFormFile photoFile)
         {
             Photo addedPhoto = new Photo
             {
-                user_id = 1,
+                user_id = authorID,
                 posted_at = DateTime.Now,
                 path = Guid.NewGuid().ToString() + Path.GetExtension(photoFile.FileName),
                 geolocation = JsonSerializer.Serialize(photo.Geolocation),
@@ -87,6 +87,18 @@ namespace PhotoSharingApi.Services
 
             }
 
+            return results.OrderByDescending(item => item.Id).ToList();
+        }
+
+        public PhotoModel GetPhotoById(int photoId)
+        {
+            var result = _mapper.Map<PhotoModel>(_photoRepository.GetById(photoId));
+            return result;
+        }
+
+        public List<PhotoModel> GetPhotoByTitle(string titlePart)
+        {
+            var results = _mapper.Map<List<PhotoModel>>(_photoRepository.GetByTitle(titlePart));
             return results;
         }
 
@@ -105,18 +117,6 @@ namespace PhotoSharingApi.Services
 
                 await _photoRepository.Delete(item => item.photo_id == photoId);
             }
-        }
-
-        public PhotoModel GetPhotoById(int photoId)
-        {
-            var result = _mapper.Map<PhotoModel>(_photoRepository.GetById(photoId));
-            return result;
-        }
-
-        public List<PhotoModel> GetPhotoByTitle(string titlePart)
-        {
-            var results = _mapper.Map<List<PhotoModel>>(_photoRepository.GetByTitle(titlePart));
-            return results;
         }
     }
 }

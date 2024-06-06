@@ -17,9 +17,12 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpPost("[action]")]
+        [Authorize]
         public async Task Add([FromForm] AddPhotoRequestModel photoModel, IFormFile photoFile)
         {
-            await _photoService.Add(photoModel, photoFile);
+            int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
+
+            await _photoService.Add(userID, photoModel, photoFile);
         }
 
         [HttpGet("[action]")]

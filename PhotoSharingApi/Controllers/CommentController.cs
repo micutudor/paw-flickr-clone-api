@@ -18,9 +18,12 @@ namespace PhotoSharingApi.Controllers
         }
 
         [HttpPost("[action]")]
+        [Authorize]
         public async Task Create(CreateCommentRequestModel comment)
         {
-            await _commentService.Create(comment);
+            int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
+
+            await _commentService.Create(userID, comment);
         }
 
         [HttpGet("[action]")]
@@ -33,7 +36,9 @@ namespace PhotoSharingApi.Controllers
         [Authorize]
         public async Task SetStatus(SetCommentStatusModel commentStatus)
         {
-            await _commentService.SetStatus(commentStatus);
+            int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
+
+            await _commentService.SetStatus(userID, commentStatus);
         }
 
         [HttpDelete("[action]")]

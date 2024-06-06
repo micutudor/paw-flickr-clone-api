@@ -2,7 +2,6 @@
 {
     public class AddPhotoRequestModel
     {
-        public int PostedBy { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int Album { get; set; }

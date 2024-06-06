@@ -12,16 +12,8 @@ namespace PhotoSharingApi.DAL.Repositories
         {
             return _dbSet.Where(item => item.user_id == userId)
                 .Include(album => album.PhotoAlbums)
-                .ToList();
-        }
-
-        public Album GetAlbumPhotos(int albumId)
-        {
-            return _dbSet.Where(item => item.album_id == albumId)
-                .Include(album => album.PhotoAlbums)
                 .ThenInclude(photoAlbum => photoAlbum.Photo)
-                .Include(album => album.User)
-                .FirstOrDefault();
+                .ToList();
         }
     }
 }
