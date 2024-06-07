@@ -40,7 +40,7 @@ namespace PhotoSharingApi.Controllers
                     Error = "The description is empty!"
                 });
             }
-            else if (photoModel.Categories.Count > 0)
+            else if (photoModel.Categories.Count == 0)
             {
                 return BadRequest(new AddPhotoResponseModel
                 {
@@ -48,7 +48,7 @@ namespace PhotoSharingApi.Controllers
                     Error = "You must select a category!"
                 });
             }
-            else if (photoModel.Album > 0)
+            else if (photoModel.Album == 0)
             {
                 return BadRequest(new AddPhotoResponseModel
                 {
