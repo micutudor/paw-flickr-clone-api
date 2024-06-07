@@ -41,9 +41,9 @@ namespace PhotoSharingApi.DAL.Repositories
 
         public virtual async Task Delete(Expression<Func<T, bool>> filter)
         {
-            var entity = await _dbSet.Where(filter).FirstOrDefaultAsync();
+            var entities = _dbSet.Where(filter).ToList();
 
-            if (entity != null)
+            foreach (var entity in entities) 
             {
                 _dbSet.Remove(entity);
                 await _dbContext.SaveChangesAsync();

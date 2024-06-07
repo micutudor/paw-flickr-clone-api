@@ -15,17 +15,20 @@ namespace PhotoSharingApi.Services
         private readonly IPhotoRepository _photoRepository;
         private readonly IPhotoCategoryRepository _photoCategoryRepository;
         private readonly IPhotoAlbumRepository _photoAlbumRepository;
+        private readonly ICommentRepository _commentRepository;
 
         public PhotoService(
             IMapper mapper, 
             IPhotoRepository photoRepository, 
             IPhotoCategoryRepository photoCategoryRepository, 
-            IPhotoAlbumRepository photoAlbumRepository)
+            IPhotoAlbumRepository photoAlbumRepository,
+            ICommentRepository commentRepository)
         {
             _mapper = mapper;
             _photoRepository = photoRepository;
             _photoCategoryRepository = photoCategoryRepository;
             _photoAlbumRepository = photoAlbumRepository;
+            _commentRepository = commentRepository;
         }
 
         public async Task Add(int authorID, AddPhotoRequestModel photo, IFormFile photoFile)
@@ -102,6 +105,14 @@ namespace PhotoSharingApi.Services
             return results;
         }
 
+        public IsPhotoAuthorResponseModel CheckIfItsAuthor(int userID, int photoId)
+        {
+            return new IsPhotoAuthorResponseModel
+            {
+                IsAuthor = _photoRepository.GetAll().Where(item => item.user_id == userID && item.photo_id == photoId).ToList().Count() == 1
+            };
+        }
+
         public async Task Delete(int photoId)
         {
             var photo = _photoRepository.GetAll().Where(item => item.photo_id == photoId).FirstOrDefault();
@@ -115,6 +126,9 @@ namespace PhotoSharingApi.Services
                 if (File.Exists(photoFilePath))
                     File.Delete(photoFilePath);
 
+                await _commentRepository.Delete(item => item.photo_id == photoId);
+                await _photoAlbumRepository.Delete(item => item.photo_id == photoId);
+                await _photoCategoryRepository.Delete(item => item.photo_id == photoId);
                 await _photoRepository.Delete(item => item.photo_id == photoId);
             }
         }
