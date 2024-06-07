@@ -1,4 +1,5 @@
-﻿using PhotoSharingApi.Models.Photos;
+﻿using PhotoSharingApi.DAL.Models;
+using PhotoSharingApi.Models.Photos;
 
 namespace PhotoSharingApi.Services.Interfaces
 {
@@ -9,5 +10,6 @@ namespace PhotoSharingApi.Services.Interfaces
         Task Delete(int photoId);
         PhotoModel GetPhotoById(int photoId);
         List<PhotoModel> GetPhotoByTitle(string titlePart);
+        IsPhotoAuthorResponseModel CheckIfItsAuthor(int userID, int photoId);
     }
 }

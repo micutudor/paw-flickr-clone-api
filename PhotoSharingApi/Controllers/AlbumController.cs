@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models.Albums;
 using PhotoSharingApi.Services.Interfaces;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Security.Principal;
 
 namespace PhotoSharingApi.Controllers
 {
@@ -18,11 +20,27 @@ namespace PhotoSharingApi.Controllers
 
         [HttpPost("[action]")]
         [Authorize]
-        public async Task Create(CreateAlbumRequestModel newAlbum)
+        public async Task<ActionResult<CreateAlbumResponseModel>> Create(CreateAlbumRequestModel newAlbum)
         {
             int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
 
+
+            if (string.IsNullOrWhiteSpace(newAlbum.Name))
+            {
+                return BadRequest(new CreateAlbumResponseModel
+                {
+                    Successfull = false,
+                    Error = "The name is empty!",
+                });
+            }
+
             await _albumService.Create(userID, newAlbum.Name);
+
+            return Ok(new CreateAlbumResponseModel
+            {
+                Successfull = true,
+                Error = null,
+            });
         }
 
         [HttpGet("[action]")]

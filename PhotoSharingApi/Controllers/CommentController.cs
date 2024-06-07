@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using PhotoSharingApi.Models.Comments;
 using PhotoSharingApi.Models.Enums;
 using PhotoSharingApi.Services.Interfaces;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Security.Principal;
 
 namespace PhotoSharingApi.Controllers
 {
@@ -19,11 +21,26 @@ namespace PhotoSharingApi.Controllers
 
         [HttpPost("[action]")]
         [Authorize]
-        public async Task Create(CreateCommentRequestModel comment)
+        public async Task<ActionResult<CreateCommentResponseModel>> Create(CreateCommentRequestModel comment)
         {
             int userID = int.Parse(HttpContext.Items["UserID"]?.ToString()!);
 
+            if (string.IsNullOrWhiteSpace(comment.Comment))
+            {
+                return BadRequest(new CreateCommentResponseModel
+                {
+                    Successfull = false,
+                    Error = "The comment is empty!"
+                });
+            }
+
             await _commentService.Create(userID, comment);
+
+            return Ok(new CreateCommentResponseModel
+            {
+                Successfull = true,
+                Error = null
+            });
         }
 
         [HttpGet("[action]")]
